@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function udata(){
+            var uname= document.getElementById("uname").value*1;
+            var email=document.getElementById("email").value*1;
+            var password= document.getElementById("password").value*1;
+
+
+            password = uname + email + password;
+
+            console.log(uname);
+            console.log(email);
+            console.log(password);
+        }
+
+    </script>
+</head>
+<body>
+        <form action="">
+            <label for="uname">Name</label>
+            <input type="text" name="" id="uname" >
+            <label for="email">E-mail</label>
+            <input type="email" name="" id="email">
+            <label for="password">Password</label>
+            <input type="password" name="" id="password" onblur="udata()">
+            <input type="submit" name="" id="" value="Submit"> 
+        </form>
+</body>
+</html>

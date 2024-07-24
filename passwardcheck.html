@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <label for="password">Enter your password</label>
+      <input type="password" id="password" onblur="check()" minlength="8" />
+      <br />
+      <br />
+      <input type="submit" name="" id="submit" value="submit" />
+    </form>
+    <script>
+        function check() {
+            var password = document.getElementById("password").value;
+            var j=0;
+            if (password.length == 0) {
+                    console.log("Please enter the passward")
+                }
+            else if (password.length < 8) {
+                console.log("passward requires min. 8 latters");
+            }
+            else{
+                for (let i = 0; i < password.length; i++) {
+                    if (password[i] == ' ') {
+                        console.log("please dont enter space in password");
+                        break
+                    }
+                    else{
+                        j++
+                    }
+                }
+                if (j == password.length && j!=0) {
+                    console.log("passward syntex is correct")
+                }
+            }
+        }
+    </script>
+  </body>
+</html>

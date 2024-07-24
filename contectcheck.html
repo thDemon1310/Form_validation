@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="u_contect">Contect</label>
+        <input type="text" name="u_contect" id="u_contect" minlength="10" maxlength="10" onblur="check()">
+    </form>
+    <script>
+        function check() {
+            var contect=document.getElementById("u_contect").value;
+            var j=0;
+            if (contect.length < 10) {
+                console.log("Please Enter your correct no.");
+            }
+            else{
+                for (let i = 0; i < 10; i++) {
+                    if ((contect[i]>='1' && contect[i]<='9') && (contect[0] >='6' && contect[0] <='9')) {
+                        j++
+                    }
+                    else{
+                        console.log("Please Enter your correct no.");
+                        break;
+                    }
+                }
+                if (j == contect.length) {
+                    console.log("No. syntex is correct");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

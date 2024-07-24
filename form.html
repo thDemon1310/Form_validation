@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style_form.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="intro"><h3>SIGN UP</h3></div>
+      <div class="welcome">
+        <h1>Wecome buddy!!</h1>
+      </div>
+      <div class="signin_form">
+        <form action="" method="post">
+          <fieldset>
+            <legend>Name:</legend>
+            <input
+              type="text"
+              name="user_name"
+              id="uname"
+              onblur="name_check()"
+            />
+            <span id="name_message"></span>
+          </fieldset>
+          <fieldset>
+            <legend>Email:</legend>
+            <input
+              type="text"
+              name="user_email"
+              id="email"
+              onblur="email_check()"
+            />
+          </fieldset>
+          <span id="email_message"></span>
+          <fieldset>
+            <legend>password:</legend>
+            <input
+              type="password"
+              name="user_password"
+              id="password"
+              onblur="password_check()"
+            />
+          </fieldset>
+          <span id="password_message"></span>
+          <fieldset>
+            <legend>Contact:</legend>
+            <input
+              type="text"
+              name="user_contact"
+              id="contact"
+              maxlength="10"
+              minlength="10"
+              onblur="contact_check()"
+            />
+          </fieldset>
+          <span id="contact_massage"></span>
+          <input class="submit" id="submit" type="submit" value="Submit" disabled onmouseover="submit_check()">
+        </form>
+      </div>
+    </div>
+    <script src="check.js"></script>
+  </body>
+</html>

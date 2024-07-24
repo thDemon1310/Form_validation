@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="post">
+      <label for="email">Enter your Email</label>
+      <input type="email" id="email" onblur="check()" />
+      <br />
+      <br />
+      <input type="submit" name="" id="submit" value="submit" />
+    </form>
+
+    <script>
+      function check() {
+        var email = document.getElementById("email").value;
+        var j = (m = 0);
+        var validdomain = ["gmail.com", "yahoo.com", "outlook.com", "mail.com"];
+        var emailpart = [];
+        emailpart = email.split("@");
+        localpart = emailpart[0];
+        domainpart = emailpart[1];
+        console.log(emailpart, localpart, domainpart);
+        if (emailpart.length == 1) {
+          console.log("Your Email syntax is incorrect it has no @");
+        } else if (emailpart.length > 2) {
+          console.log("your email syntax is incorrect it has more then one @");
+        } else if (localpart.length == 0 || domainpart == 0) {
+          console.log("Please enter/complete your email");
+        } else {
+          for (let i = 0; i < localpart.length; i++) {
+            if (
+              localpart[0] == "_" ||
+              localpart[0] == "-" ||
+              localpart[0] == "." ||
+              (localpart[0] >= "0" && localpart[0] <= "9") ||
+              (localpart[i] >= "A" && localpart[i] <= "Z") ||
+              localpart[i] == " "
+            ) {
+              console.log("Your Email syntax is incorrect");
+              break;
+            } else if (
+              (localpart[i] >= "a" && localpart[i] <= "z") ||
+              (localpart[i] >= "0" && localpart[i] <= "9") ||
+              localpart[i] == "_" ||
+              localpart[i] == "."
+            ) {
+              j++;
+            }
+          }
+          for (let k = 0; k < validdomain.length; k++) {
+            if (validdomain[k] == domainpart) {
+              m++;
+            }
+            // else{
+            //     console.log("Your email syntax is invalid");
+            // }
+          }
+          if (m == 1) {
+            console.log("Your email syntax is correct");
+          } else {
+            console.log("Your email syntax is invalid");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

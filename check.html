@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <label for="uname">Enter your name:</label>
+        <input type="text" id="uname" onblur="check()">
+        <br> <br>
+        <input type="submit" name="" id="submit" value="submit"  >
+    </form>
+    <script>
+        function check() {
+        var uname= document.getElementById("uname").value;
+        var j=0;
+        
+            console.log(uname);
+            for (let i = 0; i <uname.length; i++) {
+                if ((uname[i]>='a' && uname[i]<='z') || (uname[i]>='A' && uname[i]<='Z') || (uname[i] == " ")) {
+                    j++;
+                }
+                else{
+                    break;
+                }
+            }
+            if(j==uname.length){
+                console.log("Your name syntax is correct")
+            }
+            else{
+                console.log("galt tarike se name likh raha hai!!!!!");
+            }
+        }
+    </script>
+</body>
+</html>
